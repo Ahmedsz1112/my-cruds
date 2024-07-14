@@ -3,3 +3,10 @@
     padding:  0;
     box-sizing: border-box;
 }
+.product-img img{
+    height: 400px;
+}
+
+.content {
+    text-align: center;
+}
