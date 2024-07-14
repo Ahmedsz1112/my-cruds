@@ -42,15 +42,49 @@ function displayProducts() {
                     <span>Price: ${productsContainer[i].price} EGP</span>
                     <p>${productsContainer[i].descriotion}</p>
                 </div>
-            </div>
+                <button onClick="deleteProduct(${i})" class="btn btn-outline-danger w-100 my-2">Delete</button>
+                <button onClick="setValues(${i})"  class="btn btn-outline-success w-100 my-2">Update</button>
+        </div>
         `
     }
     document.querySelector(".row").innerHTML = cartona
 }
 
 function clearProduct(){
-     productNameInput.value = ""
+    productNameInput.value = ""
     productCategoryInput.value=""
     productPriceInput.value=""
     productDescriptionInput.value=""
+}
+
+
+
+function deleteProduct(index){
+    productsContainer.splice(index ,1)
+    localStorage.setItem("allProducts" , JSON.stringify(productsContainer) )
+    displayProducts()
+}
+
+let supperIndex ;
+
+function setValues(index){
+    supperIndex = index
+    document.getElementById("updateButton").style.display = "block"
+    document.getElementById("addBtn").style.display = "none"
+    productNameInput.value = productsContainer[index].name
+    productCategoryInput.value = productsContainer[index].category
+    productPriceInput.value = productsContainer[index].price
+    productDescriptionInput.value = productsContainer[index].descriotion
+}
+
+function updateProducrt(){
+    document.getElementById("updateButton").style.display = "none"
+    document.getElementById("addBtn").style.display = "block"
+    productsContainer[supperIndex].name =  productNameInput.value 
+    productsContainer[supperIndex].category = productCategoryInput.value
+    productsContainer[supperIndex].price = productPriceInput.value
+    productsContainer[supperIndex].descriotion = productDescriptionInput.value
+    localStorage.setItem("allProducts" , JSON.stringify(productsContainer) )
+    displayProducts()
+    clearProduct()
 }
