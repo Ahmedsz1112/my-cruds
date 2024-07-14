@@ -11,22 +11,33 @@
 <body>
     
     <div class="w-50 m-auto my-3 shadow-lg p-3 rounded">
-            <input id="productName" type="text"  class="form-control my-2" placeholder="Enter Product Name..">
-            <input id="productCategory" type="text" class="form-control my-2" placeholder="Enter Category Name..">
-            <input id="productPrice" type="number" class="form-control my-2" placeholder="Enter Price Name..">
-            <textarea id="productDescription" class="form-control my-2" placeholder="Type Product Description"></textarea>
+        <div class="form-floating mb-3">
+            <input id="productName" type="text"  class="form-control my-2" placeholder="">
+            <label for="productName">Product Price..</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input id="productCategory" type="text" class="form-control my-2" placeholder="">
+            <label for="productCategory">Enter Category Name..</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input id="productPrice" type="number" class="form-control my-2" placeholder="">
+            <label for="productPrice">Enter Price Name..</label>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea id="productDescription" class="form-control my-2" placeholder="Leave a Comment Here"></textarea>
+            <label for="productDescription">Type Product Description</label>
+        </div>
             <input id="productImg" type="file" class="form-control my-2">
             <button id="addBtn" onclick="addProduct()" class="btn btn-primary">Add Product</button>
             <button id="updateButton" onclick="updateProducrt()" class="btn btn-success">Update Product</button>
+            <input id="search" onkeyup="search(this.value)" type="text" class="form-control my-2">
     </div>
 
     <div class="container">
-        <div class="row">
+        <div class="row gy-3">
             
         </div>
     </div>
-
-
 
 
     <script src="js/bootstrap.bundle.min.js"></script>
