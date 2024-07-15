@@ -19,7 +19,7 @@ function addProduct(){
         category: productCategoryInput.value,
         price: productPriceInput.value,
         descriotion: productDescriptionInput.value,
-        img: "images/0.png"
+        img: productImgInput.files[0]?.name,
     }
     productsContainer.push(product)
     localStorage.setItem("allProducts" , JSON.stringify(productsContainer) )
@@ -32,9 +32,9 @@ function displayProducts() {
     let cartona = ""
     for(let i=0;i<productsContainer.length;i++){
         cartona +=`
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="product-img">
-                    <img src="images/1.png" alt="">
+                    <img src="images/${productsContainer[i].img}" alt="">
                 </div>
                 <div class="content">
                     <h5>${productsContainer[i].category}</h5>
@@ -98,9 +98,9 @@ function search(inputValue) {
     for(let i= 0 ; i < productsContainer.length ; i++){
         if(productsContainer[i].name.toLowerCase().includes(inputValue.toLowerCase())){
             cartona +=`
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="product-img">
-                    <img src="images/1.png" alt="">
+                    <img src="images/${productsContainer[i].img}" alt="">
                 </div>
                 <div class="content">
                     <h5>${productsContainer[i].category}</h5>

@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body >
     
-    <div class="w-50 m-auto my-3 shadow-lg p-3 rounded">
+    <div class="w-75 m-auto my-3 shadow-lg p-3 rounded ">
         <div class="form-floating mb-3">
             <input id="productName" type="text"  class="form-control my-2" placeholder="">
             <label for="productName">Product Price..</label>
@@ -30,11 +30,14 @@
             <input id="productImg" type="file" class="form-control my-2">
             <button id="addBtn" onclick="addProduct()" class="btn btn-primary">Add Product</button>
             <button id="updateButton" onclick="updateProducrt()" class="btn btn-success">Update Product</button>
-            <input id="search" onkeyup="search(this.value)" type="text" class="form-control my-2">
+            <div class="form-floating mb-3">
+                <input id="search" onkeyup="search(this.value)" type="text" class="form-control my-2" placeholder="">
+                <label for="search">Search..</label>
+            </div>
     </div>
 
     <div class="container">
-        <div class="row gy-3">
+        <div class="row gy-5">
             
         </div>
     </div>
